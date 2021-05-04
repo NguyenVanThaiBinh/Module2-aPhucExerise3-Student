@@ -7,7 +7,8 @@ import java.util.regex.Pattern;
 public class StudentObject {
     static int count = 0;
     private String name;
-    private int id, point1_1, point1_2, point2, point3;
+    private int id;
+    private double point1_1, point1_2, point2, point3;
     private double avengerPoint;
 
     public void setAvengerPoint() {
@@ -22,7 +23,7 @@ public class StudentObject {
         return id;
     }
 
-    public StudentObject(int id, String name, int point1_1, int point1_2, int point2, int point3) {
+    public StudentObject(int id, String name, double point1_1, double point1_2, double point2, double point3) {
         this.id = id;
         this.name = name;
         this.point1_1 = point1_1;
@@ -54,7 +55,7 @@ public class StudentObject {
         System.out.format("%-10s |", point1_2);
         System.out.format("%-10s |", point2);
         System.out.format("%-10s |", point3);
-        System.out.format("%-10s\n", avengerPoint);
+        System.out.format("%-10.1f\n", avengerPoint);
     }
 
     public String toCSVFormat() {
@@ -95,38 +96,38 @@ public class StudentObject {
         //check point
         do {
             System.out.println("Input Point1-1: ");
-            while (!sc2.hasNextInt()) {
+            while (!sc2.hasNextDouble()) {
                 System.out.println("Please input Point again: ");
                sc2.next();
             }
-            point1_1 = sc2.nextInt();
+            point1_1 = sc2.nextDouble();
         } while (point1_1 < 0 || point1_1 > 10);
 
         do {
             System.out.println("Input Point1-2: ");
-            while (!sc3.hasNextInt()) {
+            while (!sc3.hasNextDouble()) {
                 System.out.println("Please input Point again: ");
                  sc3.next();
             }
-            point1_2 = sc3.nextInt();
+            point1_2 = sc3.nextDouble();
         } while (point1_2 < 0 || point1_2 > 10);
 
         do {
             System.out.println("Input Point2: ");
-            while (!sc1.hasNextInt()) {
+            while (!sc1.hasNextDouble()) {
                 System.out.println("Please input Point again: ");
                sc1.next();
             }
-            point2 = sc1.nextInt();
+            point2 = sc1.nextDouble();
         } while (point2 < 0 || point2 > 10);
 
         do {
             System.out.println("Input Point3: ");
-            while (!sc2.hasNextInt()) {
+            while (!sc2.hasNextDouble()) {
                 System.out.println("Please input Point again: ");
                 sc2.next();
             }
-            point3 = sc2.nextInt();
+            point3 = sc2.nextDouble();
         } while (point3 < 0 || point3 > 10);
 
         this.avengerPoint = (point1_1 + point1_2 + 2 * point2 + 3 * point3) / 7;

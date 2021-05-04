@@ -19,9 +19,9 @@ public class StudentDataBase {
             }
             try{
                 StudentObject st = new StudentObject(Integer.parseInt(arr[0]),arr[1],
-                        Integer.parseInt(arr[2].trim()) ,Integer.parseInt(arr[3].trim())
-                        ,Integer.parseInt(arr[4].trim()) ,Integer.parseInt(arr[5].trim())
-                        );
+                        Double.parseDouble(arr[2].trim()) ,Double.parseDouble(arr[3].trim())
+                        ,Double.parseDouble(arr[4].trim()) ,Double.parseDouble(arr[5].trim())
+                );
                 st.setAvengerPoint();
                 studentLinkedList.add(st);
             }catch (ArrayIndexOutOfBoundsException ignored){
@@ -62,8 +62,8 @@ public class StudentDataBase {
             }
             try{
                 StudentObject st = new StudentObject(Integer.parseInt(arr[0]),arr[1],
-                        Integer.parseInt(arr[2].trim()) ,Integer.parseInt(arr[3].trim())
-                        ,Integer.parseInt(arr[4].trim()) ,Integer.parseInt(arr[5].trim())
+                        Double.parseDouble(arr[2].trim()) ,Double.parseDouble(arr[3].trim())
+                        ,Double.parseDouble(arr[4].trim()) ,Double.parseDouble(arr[5].trim())
                        );
                 st.setAvengerPoint();
                 printStudentList.add(st);
@@ -77,7 +77,7 @@ public class StudentDataBase {
         System.out.format("%-10s |", "Điểm hs1-2");
         System.out.format("%-10s |", "Điểm hs2");
         System.out.format("%-10s |", "Điểm hs3");
-        System.out.format("%-10s \n ", "Điểm TB");
+        System.out.format("%-10.1s \n ", "Điểm TB");
         for (StudentObject student:printStudentList) {
             student.makeTheBoard();
         }
